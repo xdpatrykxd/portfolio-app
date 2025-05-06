@@ -66,6 +66,23 @@ export default function Projects() {
                 </Link>
               </div>
               <div className={styles.card}>
+                <h2>ZSocialMedia </h2>
+                <p>
+                  A lightweight and minimal example of a social media site,
+                  built using TypeScript, EJS, and CSS. This project
+                  demonstrates basic user interfaces, chat-style messaging, and
+                  dynamic content rendering — ideal as a learning tool or
+                  boilerplate for more advanced apps.
+                </p>
+                <Link
+                  href="git@github.com:xdpatrykxd/ZSocialMedia.git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p className="link">View on GitHub</p>
+                </Link>
+              </div>
+              <div className={styles.card}>
                 <h2>💍 Countdown to My Wedding</h2>
                 <p className={styles.intro}>
                   A very personal "project" — the most exciting launch of my
