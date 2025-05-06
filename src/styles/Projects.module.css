@@ -19,6 +19,18 @@
     margin-bottom: 40px;
     font-size: 1.1rem;
   }
+  .cardImage {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .viewBtnContainer{
+    display: flex;
+    justify-content: space-around;
+  }
   
   .grid {
     display: grid;
@@ -49,4 +61,74 @@
     margin-bottom: 16px;
     line-height: 1.6;
   }
+  @media (max-width: 768px) {
+    .page {
+      padding: 48px 16px;
+    }
   
+    .intro {
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+  
+    .cardImage {
+      width: 100%;
+      height: 200px;
+    }
+  
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+  
+    .card h2 {
+      font-size: 1.3rem;
+    }
+  
+    .card p {
+      font-size: 0.95rem;
+    }
+  
+    .viewBtnCOntainer {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+  
+  /* Small screens (phones, 480px and down) */
+  @media (max-width: 480px) {
+    .page {
+      padding: 32px 12px;
+    }
+  
+    .intro {
+      font-size: 0.95rem;
+    }
+  
+    .cardImage {
+      width: 100%;
+      height: 250px;
+    }
+  
+    .card {
+      padding: 16px;
+    }
+  
+    .card h2 {
+      font-size: 1.2rem;
+    }
+  
+    .card p {
+      font-size: 0.9rem;
+    }
+  
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  
+    .viewBtnCOntainer {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

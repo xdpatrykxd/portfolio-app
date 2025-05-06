@@ -30,7 +30,9 @@ export default function Resume() {
         <p className={styles.message}>
           View the embedded resume below or download it as a PDF.
         </p>
-        <div>
+        <div><a className="link" href="/2425_CV_patryklagoda_1-1.pdf" download>
+        Download the PDF
+      </a>
           <iframe
             src="/2425_CV_patryklagoda_1-1.pdf"
             className={styles.resumeViewer}
