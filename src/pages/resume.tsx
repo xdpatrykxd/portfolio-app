@@ -1,7 +1,7 @@
 // pages/resume.tsx
 import MetaHead from "@/components/MetaHead";
 import { Geist, Geist_Mono } from "next/font/google";
-import styles from "@/styles/resume.module.css";
+import styles from "@/styles/Resume.module.css";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -25,9 +25,8 @@ export default function Resume() {
         image="/images/portfolio-preview.jpg"
       />
       <Header />
-
       <div className={styles.page}>
-        <h1 className={styles.heading}>My Resume</h1>
+        <h1>My Resume</h1>
         <p className={styles.message}>
           View the embedded resume below or download it as a PDF.
         </p>

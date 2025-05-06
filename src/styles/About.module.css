@@ -9,13 +9,6 @@
   min-height: 100vh;
 }
 
-.aboutSection h1 {
-  font-size: 3rem;
-  color: var(--primary-color);
-  text-align: center;
-  margin-bottom: 32px;
-}
-
   /* Brightest Info */
   .brightestLogo {
     width: 180px;
@@ -117,10 +110,6 @@
 @media (max-width: 768px) {
   .contentWrapper {
     padding: 0 16px;
-  }
-
-  .aboutSection h1 {
-    font-size: 2rem;
   }
 
   .skillsAndContact {

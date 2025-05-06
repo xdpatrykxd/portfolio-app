@@ -58,14 +58,6 @@
     color: #555;
   }
   
-  /* Blog Section Styling */
-  .blogSection h1 {
-    font-size: 3rem;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 16px;
-  }
-  
   .sectionTitle {
     font-size: 2rem;
     margin-top: 60px;
