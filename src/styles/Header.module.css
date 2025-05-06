@@ -25,7 +25,51 @@
   text-decoration: none;
 }
 
+.menuToggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Default nav style (desktop) */
 .nav {
   display: flex;
   gap: 16px;
+}
+
+.link {
+  color: #f3f4f6;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .menuToggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    padding: 16px 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav.show {
+    display: flex;
+  }
 }
