@@ -25,7 +25,7 @@ Welcome to my personal portfolio website! This site showcases my work, skills, a
 ## 🌐 Live Demo
 
 You can check out the live portfolio at:  
-[https://your-domain.com](https://your-domain.com)
+[https://lagodapat.com](https://lagodapat.com)
 
 ---
 
