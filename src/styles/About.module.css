@@ -1,0 +1,139 @@
+/* Algemeen */
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 24px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+.aboutSection h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+  /* Brightest Info */
+  .brightestLogo {
+    width: 180px;
+    height: auto;
+    margin: 32px auto;
+    display: block;
+    filter: drop-shadow(0 0 14px rgba(0, 0, 0, 5));
+  }
+  
+  .logoContainer {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .address {
+    font-style: normal;
+    margin-top: 12px;
+    color: var(--gray-light);
+  }
+  
+/* Content Wrapper */
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Bio Image Styling */
+.bioImageContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.bioImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Skills and Contact Layout */
+.skillsAndContact {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+/* Skills Section */
+.skills {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+}
+
+.skillList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  font-size: 1rem;
+  color: var(--gray-light);
+}
+
+/* Contact Section */
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactList li p {
+  font-size: 1rem;
+  color: var(--primary-color);
+  transition: color 0.3s;
+}
+
+.contactList li p:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .contentWrapper {
+    padding: 0 16px;
+  }
+
+  .aboutSection h1 {
+    font-size: 2rem;
+  }
+
+  .skillsAndContact {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .skillList {
+    grid-template-columns: 1fr;
+  }
+
+  .bioImage {
+    width: 120px;
+    height: 120px;
+  }
+}
