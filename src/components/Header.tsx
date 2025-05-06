@@ -14,14 +14,8 @@ export default function Header() {
 
           <Link href="/blog" className={styles.link}>Blog</Link>
           <Link href="/projects" className={styles.link}>My Projects</Link>
-          <a
-            href="/resume.pdf"
-            className={styles.link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Resume
-          </a>
+          
+          <Link href="/resume" className={styles.link}>My Resume</Link>
         </nav>
       </div>
     </header>
