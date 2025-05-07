@@ -19,7 +19,7 @@ export const projects = [
   {
     title: "ZSocialMedia",
     description:
-      "A lightweight and minimal example of a social media site,built using TypeScript, EJS, and CSS. This project demonstrates basic user interfaces, chat-style messaging, and dynamic content rendering — ideal as a learning tool or boilerplate for more advanced apps.",
+      "A lightweight and minimal example of a social media site, built using TypeScript, EJS, and CSS. This project demonstrates basic user interfaces, chat-style messaging, and dynamic content rendering — ideal as a learning tool or boilerplate for more advanced apps.",
     link: "https://github.com/xdpatrykxd/ZSocialMedia.git",
     picture: "/project3.png",
     fav: false,
