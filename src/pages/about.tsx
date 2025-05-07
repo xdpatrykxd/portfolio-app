@@ -4,6 +4,8 @@ import styles from "@/styles/About.module.css"; // Use the updated styles
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Link from "next/link";
+import { projects } from "../../public/projects";
+import ProjectCard from "@/components/ProjectCard";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -108,26 +110,42 @@ export default function About() {
                     inspirerende bedrijf.
                   </p>
                   <div className={styles.logoContainer}>
-              <img
-                src="/brightestLogo.png"
-                alt="Brightest Logo"
-                className={styles.brightestLogo}
-              />
-              <address className={styles.address}>
-                <strong>Brightest HQ</strong>
-                <br />
-                Satenrozen 10
-                <br />
-                2550 Kontich, Belgium
-              </address>
-            </div>
+                    <img
+                      src="/brightestLogo.png"
+                      alt="Brightest Logo"
+                      className={styles.brightestLogo}
+                    />
+                    <address className={styles.address}>
+                      <strong>Brightest HQ</strong>
+                      <br />
+                      Satenrozen 10
+                      <br />
+                      2550 Kontich, Belgium
+                    </address>
+                  </div>
                 </section>
 
                 {/* Projects Section */}
                 <section className={styles.projects}>
                   <h2>Projecten</h2>
                   <p>Hier zijn enkele projecten waar ik trots op ben:</p>
-                  <ul>{/* Voeg project links of een showcase toe */}</ul>
+                  
+                  <div className={styles.projectDiv}>
+                    {projects
+                      .filter((project) => project.fav)
+                      .map((project) => (
+                        <div className={styles.project}>
+                        <ProjectCard
+                          key={project.title}
+                          fav={project.fav}
+                          title={project.title}
+                          description={project.description}
+                          link={project.link}
+                          onlineLink={project.onlineLink}
+                          picture={project.picture}
+                        /></div>
+                      ))}
+                  </div>
                 </section>
               </div>
 

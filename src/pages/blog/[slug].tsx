@@ -63,13 +63,17 @@ const PostPage = ({ post }: { post: Post }) => {
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
-        {post.tags && (
-          <div className={styles.tagList}>
-            {post.tags.map((tag) => (
-              <span key={tag} className={styles.tag}>#{tag}</span>
-            ))}
-          </div>
-        )}
+{post.tags?.map((tag) => (
+  <Link
+    key={tag}
+    href={`/blog?tag=${encodeURIComponent(tag.replace(/^#/, ""))}`}
+    passHref
+  >
+    <button className={styles.tag}>
+      #{tag.replace(/^#/, "")}
+    </button>
+  </Link>
+))}
       </div>
 
       <Footer />
@@ -78,3 +82,11 @@ const PostPage = ({ post }: { post: Post }) => {
 };
 
 export default PostPage;
+
+
+
+
+
+
+
+

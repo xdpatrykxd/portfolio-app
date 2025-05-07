@@ -15,12 +15,6 @@
     flex-direction: column;
     gap: 48px;
   }
-  .tagFilter {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
-  }
   
   .tagButton {
     background-color: var(--background-color);
@@ -38,7 +32,7 @@
     color: var(--primary-color);
   }
   
-  .activeTag {
+  .activeTag, .clearFilterButton {
     background-color: #0070f3;
     color: white;
   }
@@ -51,11 +45,50 @@
   }
   
   .tag {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid var(--primary-color);
+    padding: 4px 10px;
     font-size: 0.8rem;
-    background-color: #eee;
-    padding: 2px 8px;
-    border-radius: 12px;
-    color: #555;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+  }
+  .clearFilterButton {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid var(--secondary-color);
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+  }
+  .post a {
+    text-decoration: none; /* Remove underline from everything in the link */
+  }
+  .post .postExcerpt{
+    text-decoration: none;
+    color:  white;
+  }
+  
+  .post:hover a {
+    text-decoration: none; /* Prevent underline on hover */
+  }
+  
+  .postExcerpt,
+  .tagList {
+    text-decoration: none !important; /* Force no underline */
+  }
+
+  .tagList button {
+    text-decoration: none;
+  }
+  .tagList button:hover {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: black;
+    font-weight: 500;
   }
   
   .sectionTitle {
@@ -86,7 +119,41 @@
     background-color: rgba(255, 255, 255, 0.03);
     max-width: 700px;
   }
+
+  .tagFilter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    margin: 16px auto 32px;
+    max-width: 800px;
+    padding: 0 16px;
+    justify-content: flex-start;
+  }
   
+  .tagButton {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid var(--primary-color);
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+  }
+  
+  .tagButton:hover {
+    background-color: var(--primary-color);
+    color: black;
+  }
+  
+  .activeTag {
+    background-color: var(--primary-color);
+    color: black;
+    font-weight: 500;
+  }
+  
+
+
   /* Brightest Info */
   .brightestLogo {
     width: 180px;

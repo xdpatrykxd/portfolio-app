@@ -1,11 +1,12 @@
 import MetaHead from "@/components/MetaHead";
 import { Geist, Geist_Mono } from "next/font/google";
-import styles from "@/styles/Blog.module.css"; // Import the updated styles
+import styles from "@/styles/Blog.module.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Link from "next/link";
-import { getPosts } from "@/utils/getPosts"; // Import the function to fetch posts
-import { Post } from "@/utils/types"; // Import the Post type
+import { getPosts } from "@/utils/getPosts";
+import { Post } from "@/utils/types";
+import { useRouter } from "next/router";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,30 +18,31 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Define the props for the Blog component
 interface BlogProps {
-  posts: Post[]; // The 'posts' prop should always be an array
+  posts: Post[];
 }
 
-// The Blog component that will render the list of posts
-import { useState } from "react";
-
 export default function Blog({ posts }: BlogProps) {
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const router = useRouter();
+  const { tag } = router.query; // Access the tag from the URL query parameter
 
-  const allTags = Array.from(new Set(posts.flatMap((post) => post.tags || [])));
+  
+  // Normalize and sort tags
+  const allTags = Array.from(
+    new Set(
+      posts.flatMap((post) =>
+        (post.tags || []).map((tag) => tag.replace(/^#/, ""))
+      )
+    )
+  );
+  const sortedTags = allTags.sort((a, b) => a.localeCompare(b));
 
-  const filteredPosts = selectedTag
-    ? posts.filter((post) => post.tags?.includes(selectedTag))
+  // Filter posts based on the selected tag from the URL
+  const filteredPosts = tag
+    ? posts.filter((post) =>
+        post.tags?.some((postTag) => postTag.replace(/^#/, "") === tag)
+      )
     : posts;
-
-  if (!posts || posts.length === 0) {
-    return (
-      <div>
-        <p>No posts available yet. Please check back later!</p>
-      </div>
-    );
-  }
 
   return (
     <>
@@ -56,7 +58,6 @@ export default function Blog({ posts }: BlogProps) {
         <main className={styles.main}>
           <section className={styles.blogSection}>
             <h1 className={styles.blogTitle}>Welkom bij mijn blog</h1>
-
             <p className={styles.intro}>
               Als student programmeren ben ik altijd geboeid geweest door
               technologie, innovatie en hoe bedrijven in de praktijk werken.
@@ -102,33 +103,39 @@ export default function Blog({ posts }: BlogProps) {
               Brightest, de projecten waaraan ik meewerk, de vaardigheden die ik
               ontwikkel en de uitdagingen die ik onderweg tegenkom. Het doel?
               Transparantie bieden in hoe het is om als student de stap te
-              zetten naar de professionele wereld.
+              zetten naar de professionele wereld. Bedankt dat je meeverloopt op
+              deze reis. Ik kijk ernaar uit om mijn ervaringen te blijven delen
+              en hopelijk ook jou te inspireren in je eigen groeipad binnen
+              tech!
             </p>
 
-            <p>
-              Bedankt dat je meeverloopt op deze reis. Ik kijk ernaar uit om
-              mijn ervaringen te blijven delen en hopelijk ook jou te inspireren
-              in je eigen groeipad binnen tech!
-            </p>
             <h2 className={styles.sectionTitle}>Filter op categorie</h2>
             <div className={styles.tagFilter}>
-              {allTags.map((tag) => (
+              {sortedTags.map((tag) => (
                 <button
                   key={tag}
                   className={`${styles.tagButton} ${
-                    selectedTag === tag ? styles.activeTag : ""
-                  }`}
-                  onClick={() =>
-                    setSelectedTag(tag === selectedTag ? null : tag)
-                  }
+                    tag === (router.query.tag || "") ? styles.activeTag : ""
+                  }`} // Active tag class based on URL
+                  onClick={() => {
+                    // Update the URL with the selected tag as a query parameter
+                    router.push(`/blog?tag=${encodeURIComponent(tag)}`);
+                  }}
                 >
-                  #{tag}
+                  {tag}
                 </button>
               ))}
+              {tag && (
+                <button
+                  onClick={() => router.push("/blog")} // Clears the tag filter
+                  className={styles.clearFilterButton}
+                >
+                  Clear Filter
+                </button>
+              )}
             </div>
 
             <h2 className={styles.sectionTitle}>Blogposts</h2>
-
             <div className={styles.posts}>
               {filteredPosts.map((post) => (
                 <div key={post.slug} className={styles.post}>
@@ -144,9 +151,20 @@ export default function Blog({ posts }: BlogProps) {
                         <p className={styles.postExcerpt}>{post.excerpt}</p>
                         <div className={styles.tagList}>
                           {post.tags?.map((tag) => (
-                            <span key={tag} className={styles.tag}>
-                              #{tag}
-                            </span>
+                            <button
+                              key={tag}
+                              className={styles.tag}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                router.push(
+                                  `/blog?tag=${encodeURIComponent(
+                                    tag.replace(/^#/, "")
+                                  )}`
+                                );
+                              }}
+                            >
+                              #{tag.replace(/^#/, "")}
+                            </button>
                           ))}
                         </div>
                       </section>
@@ -159,21 +177,16 @@ export default function Blog({ posts }: BlogProps) {
           </section>
         </main>
       </div>
-
       <Footer />
     </>
   );
 }
 
-// Fetch posts during build time (Static Site Generation)
 export async function getStaticProps() {
   const posts = getPosts();
-
-  console.log("Fetched Posts: ", posts); // Log posts to check if it's being fetched correctly
-
   return {
     props: {
-      posts: posts || [], // Ensure posts is always an array
+      posts: posts || [],
     },
   };
 }

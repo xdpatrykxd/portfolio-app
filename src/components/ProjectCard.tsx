@@ -6,6 +6,7 @@ interface ProjectCardProps {
   title: string;
   description: string;
   link: string;
+  fav: boolean;
   onlineLink?: string;
   picture: string;
 }
@@ -14,6 +15,7 @@ export default function ProjectCard({
   title,
   description,
   onlineLink,
+  fav,
   link,
   picture,
 }: ProjectCardProps) {

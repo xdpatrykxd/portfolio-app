@@ -94,7 +94,14 @@
   flex-direction: column;
   gap: 10px;
 }
-
+.projectDiv{
+  display: flex;
+}
+.project{
+  display: flex;
+  max-width: 50%;
+  padding: 0% 15px;
+}
 .contactList li p {
   font-size: 1rem;
   color: var(--primary-color);
@@ -120,7 +127,15 @@
   .skillList {
     grid-template-columns: 1fr;
   }
-
+  .projectDiv{
+    display: flex;
+    flex-direction: column;
+  }
+  .project{
+    max-width: 100%;
+    padding: 5%;
+  }
+  
   .bioImage {
     width: 120px;
     height: 120px;

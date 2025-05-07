@@ -30,6 +30,7 @@ export default function Projects() {
               {projects.map((project) => (
                 <ProjectCard
                   key={project.title}
+                  fav={project.fav}
                   title={project.title}
                   description={project.description}
                   link={project.link} 
