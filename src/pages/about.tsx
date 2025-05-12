@@ -74,13 +74,16 @@ export default function About() {
                     softwaretesten en kwaliteitsbewaking.
                   </p>
                   <p>
-                    Brightest is een bedrijf dat hoogwaardige
-                    softwareoplossingen levert aan zijn klanten, met een sterke
-                    focus op samenwerking, innovatie en continue verbetering. Ze
-                    helpen organisaties bij het creëren van betrouwbare software
-                    door middel van innovatieve diensten en de inzet van een
-                    team van ervaren consultants. Het is geweldig om deel uit te
-                    maken van zo'n dynamisch en vooruitstrevend bedrijf.
+                    BrightestÒ is een Belgisch consultancybedrijf
+                    gespecialiseerd in softwarekwaliteit en testing. Ze helpen
+                    organisaties bij het realiseren van kwalitatieve
+                    softwareoplossingen door middel van innovatieve diensten en
+                    een team van ervaren consultants. Hun focus ligt op
+                    samenwerking, continue verbetering en het welzijn van hun
+                    medewerkers. Brightest biedt expertise in softwaretesting,Ò
+                    kwaliteitsbewaking en op maat gemaakte oplossingen om
+                    bedrijven te ondersteunen bij efficiënte en kosteneffectieve
+                    softwareontwikkeling.
                   </p>
                   <p>
                     Als stagiair ben ik actief betrokken bij het automatiseren
@@ -129,21 +132,22 @@ export default function About() {
                 <section className={styles.projects}>
                   <h2>Projecten</h2>
                   <p>Hier zijn enkele projecten waar ik trots op ben:</p>
-                  
+
                   <div className={styles.projectDiv}>
                     {projects
                       .filter((project) => project.fav)
                       .map((project) => (
                         <div className={styles.project}>
-                        <ProjectCard
-                          key={project.title}
-                          fav={project.fav}
-                          title={project.title}
-                          description={project.description}
-                          link={project.link}
-                          onlineLink={project.onlineLink}
-                          picture={project.picture}
-                        /></div>
+                          <ProjectCard
+                            key={project.title}
+                            fav={project.fav}
+                            title={project.title}
+                            description={project.description}
+                            link={project.link}
+                            onlineLink={project.onlineLink}
+                            picture={project.picture}
+                          />
+                        </div>
                       ))}
                   </div>
                 </section>
