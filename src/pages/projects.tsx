@@ -43,7 +43,7 @@ export default function Projects() {
                 <h2>💍 Countdown to My Wedding</h2>
                 <p className={styles.intro}>
                   A very personal "project"!
-                </p><div className="p-4 rounded-xl shadow-lg bg-white text-center">
+                </p><div className={styles.timer}>
                   <WeddingCountdown weddingDate="2026-03-07T12:00:00" />
                 </div>
               </div>
