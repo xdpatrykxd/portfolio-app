@@ -1,35 +1,35 @@
-/* Algemeen */
+/* === General Page Layout === */
 .page {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 64px 24px;
+  min-height: 100vh;
   background-color: var(--background-color);
   color: var(--text-color);
-  min-height: 100vh;
 }
 
-  /* Brightest Info */
-  .brightestLogo {
-    width: 180px;
-    height: auto;
-    margin: 32px auto;
-    display: block;
-    filter: drop-shadow(0 0 14px rgba(0, 0, 0, 5));
-  }
-  
-  .logoContainer {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
-  .address {
-    font-style: normal;
-    margin-top: 12px;
-    color: var(--gray-light);
-  }
-  
-/* Content Wrapper */
+/* === Logo Section === */
+.logoContainer {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.brightestLogo {
+  width: 180px;
+  height: auto;
+  margin: 32px auto;
+  display: block;
+  filter: drop-shadow(0 0 14px rgba(0, 0, 0, 5));
+}
+
+.address {
+  margin-top: 12px;
+  font-style: normal;
+  color: var(--gray-light);
+}
+
+/* === Content Wrapper === */
 .contentWrapper {
   display: flex;
   flex-direction: column;
@@ -45,7 +45,7 @@
   gap: 32px;
 }
 
-/* Bio Image Styling */
+/* === Bio Image === */
 .bioImageContainer {
   display: flex;
   justify-content: center;
@@ -55,53 +55,46 @@
 .bioImage {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
   object-fit: cover;
+  border-radius: 50%;
 }
 
-/* Skills and Contact Layout */
+/* === Skills & Contact === */
 .skillsAndContact {
   display: flex;
-  gap: 48px;
   flex-wrap: wrap;
+  gap: 48px;
 }
 
 /* Skills Section */
 .skills {
   flex: 1;
-  background: rgba(255, 255, 255, 0.03);
   padding: 20px;
   border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
 }
 
 .skillList {
-  list-style: none;
-  padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 12px;
+  padding: 0;
+  list-style: none;
   font-size: 1rem;
   color: var(--gray-light);
 }
 
 /* Contact Section */
 .contactList {
-  list-style: none;
-  padding: 0;
-  margin-top: 16px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 16px;
+  padding: 0;
+  list-style: none;
 }
-.projectDiv{
-  display: flex;
-}
-.project{
-  display: flex;
-  max-width: 50%;
-  padding: 0% 15px;
-}
+
 .contactList li p {
   font-size: 1rem;
   color: var(--primary-color);
@@ -111,6 +104,58 @@
 .contactList li p:hover {
   color: var(--accent-color);
   text-decoration: underline;
+}
+
+/* === Projects Section === */
+.projectDiv {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 5px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.project {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 10px;
+  border-radius: 12px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* Half-Screen / Tablet / Small Laptop */
+@media (max-width: 1024px) {
+  .contentWrapper {
+    padding: 0 20px;
+    gap: 32px;
+  }
+
+  .skillsAndContact {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .skillList {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .bioImage {
+    width: 130px;
+    height: 130px;
+  }
+
+  .projectDiv {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .project {
+    max-width: 100%;
+    padding: 4%;
+  }
 }
 
 /* Mobile Responsiveness */

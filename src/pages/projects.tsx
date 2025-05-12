@@ -37,18 +37,16 @@ export default function Projects() {
                   onlineLink={project.onlineLink}
                   picture={project.picture}                />
               ))}
-
-              <div className={styles.card}>
+            </div>
+          </section>
+          <div className={styles.weddingCard}>
                 <h2>💍 Countdown to My Wedding</h2>
                 <p className={styles.intro}>
-                  A very personal "project" — the most exciting launch of my life!
-                </p>
-                <div className="p-4 rounded-xl shadow-lg bg-white text-center">
+                  A very personal "project"!
+                </p><div className="p-4 rounded-xl shadow-lg bg-white text-center">
                   <WeddingCountdown weddingDate="2026-03-07T12:00:00" />
                 </div>
               </div>
-            </div>
-          </section>
         </main>
       </div>
       <Footer />

@@ -31,11 +31,11 @@ export default function ProjectCard({
       <h2>{title}</h2>
       <p>{description}</p>
       <div className={styles.viewBtnContainer}>
-        <Link href={link} target="_blank" rel="noopener noreferrer">
+        <Link href={link} target="_blank" rel="noopener noreferrer" className={styles.button}>
           <p className="link">View on GitHub</p>
         </Link>
         {onlineLink && (
-          <Link href={onlineLink} target="_blank" rel="noopener noreferrer">
+          <Link href={onlineLink} target="_blank" rel="noopener noreferrer" className="">
             <p className="link">View Online</p>
           </Link>
         )}
