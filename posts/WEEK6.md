@@ -5,7 +5,7 @@ excerpt: "Opzetten van een Selenium WebDriver testscript om de interactie met Gi
 image: "/post6.png"
 tags: 
     - week6
-    - selenium
+    - Selenium
     - testautomatisering
     - webapplicatie
 ---
