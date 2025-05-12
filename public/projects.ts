@@ -33,4 +33,12 @@ export const projects = [
     picture: "/project4.png",
     fav: true,
   },
+  {
+    title: "UFO-App",
+    description:
+      "UFO-App is a cross-platform mobile application built with React Native and ExpoIt allows users to browse reported UFO sightings, view the most recent ones, and report their own experiences. With a dark-themed interface and intuitive navigation, the app provides an engaging experience for enthusiasts of the unexplained.",
+    link: "https://github.com/xdpatrykxd/UFO-app",
+    picture: "/project5.png",
+    fav: true,
+  },
 ];
