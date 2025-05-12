@@ -74,7 +74,7 @@ export default function About() {
                     softwaretesten en kwaliteitsbewaking.
                   </p>
                   <p>
-                    BrightestÒ is een Belgisch consultancybedrijf
+                    Brightest is een Belgisch consultancybedrijf
                     gespecialiseerd in softwarekwaliteit en testing. Ze helpen
                     organisaties bij het realiseren van kwalitatieve
                     softwareoplossingen door middel van innovatieve diensten en
