@@ -80,7 +80,7 @@ export default function About() {
                     softwareoplossingen door middel van innovatieve diensten en
                     een team van ervaren consultants. Hun focus ligt op
                     samenwerking, continue verbetering en het welzijn van hun
-                    medewerkers. Brightest biedt expertise in softwaretesting,Ò
+                    medewerkers. Brightest biedt expertise in softwaretesting,
                     kwaliteitsbewaking en op maat gemaakte oplossingen om
                     bedrijven te ondersteunen bij efficiënte en kosteneffectieve
                     softwareontwikkeling.
