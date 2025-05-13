@@ -16,11 +16,13 @@
 }
 
 .brightestLogo {
-  width: 180px;
-  height: auto;
-  margin: 32px auto;
-  display: block;
-  filter: drop-shadow(0 0 14px rgba(0, 0, 0, 5));
+  width: 100%;
+  height: 250px;
+  object-fit:contain;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background-color: whitesmoke;
+  background-blend-mode:color-burn;
 }
 
 .address {
@@ -110,20 +112,11 @@
 .projectDiv {
   display: grid;
   grid-template-columns: repeat(2, minmax(280px, 1fr));
-  gap: 5px;
+  gap: 25px;
   max-width: 100%;
   width: 100%;
 }
 
-.project {
-  background: rgba(255, 255, 255, 0.03);
-  padding: 10px;
-  border-radius: 12px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
 
 /* Half-Screen / Tablet / Small Laptop */
@@ -149,7 +142,7 @@
 
   .projectDiv {
     grid-template-columns: repeat(2, minmax(140px, 1fr));
-    gap: 20px;
+    gap: 10px;
   }
 
   .project {

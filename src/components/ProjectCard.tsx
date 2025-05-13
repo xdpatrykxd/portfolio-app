@@ -28,17 +28,29 @@ export default function ProjectCard({
         height={200}
         className={styles.cardImage}
       />
-      <h2>{title}</h2>
-      <p>{description}</p>
-      <div className={styles.viewBtnContainer}>
-        <Link href={link} target="_blank" rel="noopener noreferrer" className={styles.button}>
-          <p className="link">View on GitHub</p>
-        </Link>
-        {onlineLink && (
-          <Link href={onlineLink} target="_blank" rel="noopener noreferrer" className="">
-            <p className="link">View Online</p>
+      <div className={styles.cardInfo}>
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <div className={styles.viewBtnContainer}>
+          <Link
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.button}
+          >
+            <p className="link">View on GitHub</p>
           </Link>
-        )}
+          {onlineLink && (
+            <Link
+              href={onlineLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className=""
+            >
+              <p className="link">View Online</p>
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );
