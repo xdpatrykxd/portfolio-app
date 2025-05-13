@@ -40,5 +40,12 @@ export const projects = [
     link: "https://github.com/xdpatrykxd/UFO-app",
     picture: "/project5.png",
     fav: true,
+  },{
+    title: "AirchitectLoggerTool",
+    description:
+      "AirchitectLoggerTool is a unified application designed to read, validate, and process measurement data from iiTrak 2 and Hioki logging devices. It supports both technicians and salespeople in uploading and checking logger data using Bluetooth. This tool was developed as a student project by a team of five — four other students and myself.",
+    link: "https://github.com/xdpatrykxd/AirchitectLoggerTool",
+    picture: "/project6.png",
+    fav: true,
   },
 ];
