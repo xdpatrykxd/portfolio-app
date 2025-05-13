@@ -109,7 +109,7 @@
 /* === Projects Section === */
 .projectDiv {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
   gap: 5px;
   max-width: 100%;
   width: 100%;
@@ -148,7 +148,7 @@
   }
 
   .projectDiv {
-    flex-direction: column;
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
     gap: 20px;
   }
 
