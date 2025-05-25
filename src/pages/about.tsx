@@ -195,7 +195,7 @@ export default function About() {
                     </li>
                     <li>
                       <Link
-                        href="https://github.com/lagodapatryk"
+                        href="https://github.com/xdpatrykxd"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
