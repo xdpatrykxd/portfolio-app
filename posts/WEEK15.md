@@ -1,5 +1,7 @@
 ---
 title: "Week 15 - Laatste sprint en voorbereidingen eindpresentatie"
+excerpt: "In de laatste week voor de eindpresentatie werd de druk voelbaar. Een kritieke bug, een intensieve dry-run en een reeks presentatiesessies zorgden voor een stevige eindsprint richting een duidelijke, toegankelijke pitch voor zowel technische als niet-technische stakeholders."
+date: "2025-05-25"
 image: "/post15.png"
 tags:
   - week15
@@ -8,7 +10,6 @@ tags:
   - automation
   - bugfix
   - projectvoorbereiding
-excerpt: "In de laatste week voor de eindpresentatie werd de druk voelbaar. Een kritieke bug, een intensieve dry-run en een reeks presentatiesessies zorgden voor een stevige eindsprint richting een duidelijke, toegankelijke pitch voor zowel technische als niet-technische stakeholders."
 ---
 
 ## Week 15 – 19 t.e.m. 23 april
