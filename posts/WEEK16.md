@@ -1,7 +1,7 @@
 ---
 title: "Week 16 - De finale presentatie en afsluiting"
 excerpt: "In week 16 bereidden we ons voor op het laatste grote moment van onze stage: de eindpresentatie. We testten onze applicatie tot in de puntjes, werkten de slides en scripts af en presenteerden ons project aan een professioneel publiek. Een week vol spanning, trots en mooie afsluitingen."
-date: "2025-05-19"
+date: "2025-05-29"
 image: "/post16.png"
 tags:
   - week16
