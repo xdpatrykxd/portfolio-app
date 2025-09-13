@@ -1,6 +1,6 @@
 import MetaHead from "@/components/MetaHead";
 import { Geist, Geist_Mono } from "next/font/google";
-import styles from "@/styles/About.module.css"; // Use the updated styles
+import styles from "@/styles/About.module.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Link from "next/link";
@@ -22,7 +22,7 @@ export default function About() {
     <>
       <MetaHead
         title="About – Lagoda Patryk"
-        description="Learn more about Lagoda Patryk, a passionate web developer."
+        description="Over Lagoda Patryk: web developer met focus op gebruiksvriendelijke, performante webapps. Associate Degree (magna cum laude), nu Professional Bachelor Applied Computer Science."
         image="/images/portfolio-preview.jpg"
       />
       <Header />
@@ -35,9 +35,9 @@ export default function About() {
             <h1>About Me</h1>
 
             <div className={styles.contentWrapper}>
-              {/* About Content Section */}
+              {/* LEFT COLUMN */}
               <div className={styles.aboutContent}>
-                {/* Bio Section */}
+                {/* Bio */}
                 <section className={styles.bio}>
                   <div className={styles.bioImageContainer}>
                     <img
@@ -46,100 +46,57 @@ export default function About() {
                       className={styles.bioImage}
                     />
                   </div>
+
                   <h2>Wie ben ik?</h2>
                   <p>
-                    Ik ben een gepassioneerde webontwikkelaar met een sterke
-                    focus op het bouwen van dynamische, responsieve en
-                    gebruiksvriendelijke webapplicaties. Met meer dan twee jaar
-                    ervaring in moderne webtechnologieën, geniet ik van het
-                    oplossen van problemen en het creëren van intuïtieve
-                    gebruikerservaringen.
+                    Ik ben Patryk, een web developer die houdt van het bouwen
+                    van{" "}
+                    <strong>
+                      dynamische, responsieve en gebruiksvriendelijke
+                    </strong>{" "}
+                    webapplicaties. Onlangs behaalde ik mijn{" "}
+                    <strong>
+                      Associate Degree in Programming (magna cum laude)
+                    </strong>{" "}
+                    aan AP Hogeschool Antwerpen. Momenteel volg ik de{" "}
+                    <strong>
+                      Professional Bachelor Applied Computer Science
+                    </strong>
+                    , waar ik mijn kennis verder verdiep.
                   </p>
                   <p>
-                    Mijn expertise omvat full-stack ontwikkeling met React,
-                    Next.js, Node.js, en meer. Ik sta altijd open om nieuwe
-                    technologieën te leren en mijn vaardigheden uit te breiden.
+                    Ik werk graag <strong>full-stack</strong> met React, Next.js
+                    en Node.js. Ik geniet ervan om complexe problemen te
+                    vertalen naar intuïtieve interfaces met nette, onderhoudbare
+                    code.
                   </p>
                 </section>
 
-                {/* Stage Info Section */}
+                {/* Stage (kort) */}
                 <section className={styles.stageInfo}>
-                  <h2>Mijn Stage bij Brightest</h2>
+                  <h2>Stage</h2>
                   <p>
-                    Op dit moment loop ik stage bij <strong>Brightest</strong>,
-                    een Belgisch consultancybedrijf dat zich richt op
-                    softwarekwaliteit en testing. Ik ben ontzettend enthousiast
-                    over deze kans, omdat het mij de gelegenheid biedt om
-                    diepgaande inzichten te krijgen in de wereld van
-                    softwaretesten en kwaliteitsbewaking.
+                    Tijdens mijn stage heb ik ervaring opgedaan met
+                    testautomatisering en het bouwen van een UI bovenop een
+                    testframework. In mijn{" "}
+                    <Link href="/blog" className="link2">
+                      blog
+                    </Link>{" "}
+                    deel ik meer details en inzichten.
                   </p>
-                  <p>
-                    Brightest is een Belgisch consultancybedrijf
-                    gespecialiseerd in softwarekwaliteit en testing. Ze helpen
-                    organisaties bij het realiseren van kwalitatieve
-                    softwareoplossingen door middel van innovatieve diensten en
-                    een team van ervaren consultants. Hun focus ligt op
-                    samenwerking, continue verbetering en het welzijn van hun
-                    medewerkers. Brightest biedt expertise in softwaretesting,
-                    kwaliteitsbewaking en op maat gemaakte oplossingen om
-                    bedrijven te ondersteunen bij efficiënte en kosteneffectieve
-                    softwareontwikkeling.
-                  </p>
-                  <p>
-                    Als stagiair ben ik actief betrokken bij het automatiseren
-                    van tests en het verbeteren van de softwarekwaliteit door
-                    het toepassen van diverse testtechnieken. Mijn werk richt
-                    zich voornamelijk op het bouwen van een gebruikersinterface
-                    (UI) voor een testing framework in <strong>Selenium</strong>
-                    , waarmee we de automatisering en effectiviteit van onze
-                    testprocessen verbeteren.
-                  </p>
-                  <p>
-                    Deze stage biedt mij de mogelijkheid om niet alleen te leren
-                    over softwaretesten, maar ook om waardevolle ervaring op te
-                    doen in het ontwikkelen van betrouwbare en robuuste
-                    applicaties. Het is bijzonder waardevol om mijn technische
-                    vaardigheden te combineren met de inzichten die ik krijg
-                    over hoe bedrijven als Brightest samenwerken met klanten om
-                    kwalitatieve softwareoplossingen te bieden.
-                  </p>
-                  <p>
-                    Mijn tijd bij Brightest is een ongelooflijke leerervaring,
-                    en ik kijk ernaar uit om mijn kennis verder uit te breiden
-                    en bij te dragen aan het succes van het team. Het stelt me
-                    in staat om te begrijpen hoe belangrijk het is om te blijven
-                    leren en te innoveren in de software-industrie, en ik ben
-                    dankbaar voor de kans om onderdeel uit te maken van dit
-                    inspirerende bedrijf.
-                  </p>
-                  <div className={styles.logoContainer}>
-                    <img
-                      src="/brightestLogo.png"
-                      alt="Brightest Logo"
-                      className={styles.brightestLogo}
-                    />
-                    <address className={styles.address}>
-                      <strong>Brightest HQ</strong>
-                      <br />
-                      Satenrozen 10
-                      <br />
-                      2550 Kontich, Belgium
-                    </address>
-                  </div>
                 </section>
 
-                {/* Projects Section */}
+                {/* Projecten */}
                 <section className={styles.projects}>
                   <h2>Projecten</h2>
-                  <p>Hier zijn enkele projecten waar ik trots op ben:</p>
+                  <p>Een selectie waar ik trots op ben:</p>
 
                   <div className={styles.projectDiv}>
                     {projects
                       .filter((project) => project.fav)
                       .map((project) => (
-                        <div className={styles.project}>
+                        <div className={styles.project} key={project.title}>
                           <ProjectCard
-                            key={project.title}
                             fav={project.fav}
                             title={project.title}
                             description={project.description}
@@ -150,12 +107,18 @@ export default function About() {
                         </div>
                       ))}
                   </div>
+
+                  <div style={{ marginTop: 12 }}>
+                    <Link href="/projects" className={styles.readMore}>
+                      Bekijk alle projecten →
+                    </Link>
+                  </div>
                 </section>
               </div>
 
-              {/* Skills and Contact Section */}
+              {/* RIGHT COLUMN */}
               <div className={styles.skillsAndContact}>
-                {/* Skills Section */}
+                {/* Skills */}
                 <section className={styles.skills}>
                   <h2>Skills</h2>
                   <ul className={styles.skillList}>
@@ -171,13 +134,10 @@ export default function About() {
                   </ul>
                 </section>
 
-                {/* Contact Section */}
+                {/* Contact */}
                 <section className={styles.contact}>
                   <h2>📬 Contact</h2>
-                  <p>
-                    Zin om samen te werken, een vraag te stellen of gewoon hallo
-                    te zeggen? Ik hoor graag van je!
-                  </p>
+                  <p>Samenwerken of een vraag? Stuur gerust een bericht.</p>
                   <ul className={styles.contactList}>
                     <li>
                       <Link href="mailto:lagoda.patryk@gmail.com">
