@@ -1,51 +1,47 @@
-// pages/resume.tsx
-import MetaHead from "@/components/MetaHead";
-import { Geist, Geist_Mono } from "next/font/google";
-import styles from "@/styles/resume.module.css";
 import Link from "next/link";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import MetaHead from "@/components/MetaHead";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const cvPath = "/2425_CV_patryklagoda_1-1.pdf";
 
 export default function Resume() {
   return (
     <>
       <MetaHead
-        title="Lagoda Patryk – Resume"
-        description="View and download the resume of Lagoda Patryk, web developer skilled in React, Next.js, and TypeScript."
-        image="/images/portfolio-preview.jpg"
+        title="CV - Patryk Lagoda"
+        description="View or download the CV of Patryk Lagoda."
       />
-      <Header />
-      <div className={styles.page}>
-        <h1>My Resume</h1>
-        <p className={styles.message}>
-          View the embedded resume below or download it as a PDF.
-        </p>
-        <div><a className="link" href="/2425_CV_patryklagoda_1-1.pdf" download>
-        Download the PDF
-      </a>
-          <iframe
-            src="/2425_CV_patryklagoda_1-1.pdf"
-            className={styles.resumeViewer}
-          />
-        </div>
-        <div>
-          <Link href="/">
-            <p className="link">← Back to Home</p>
+      <main className="site-shell" id="top">
+        <nav className="topbar" aria-label="Resume navigation">
+          <Link className="brand" href="/" aria-label="Patryk Lagoda home">
+            <img src="/favicon.ico" alt="" width="28" height="28" />
           </Link>
-        </div>
-      </div>
+          <div className="nav-links">
+            <Link href="/">Home</Link>
+            <a href={cvPath} download>
+              Download CV
+            </a>
+          </div>
+        </nav>
 
-      <Footer />
+        <section className="resume-section" aria-labelledby="resume-title">
+          <div className="resume-header">
+            <div>
+              <p className="eyebrow">Curriculum vitae</p>
+              <h1 id="resume-title">Patryk Lagoda CV</h1>
+            </div>
+            <a className="button primary" href={cvPath} download>
+              Download PDF
+            </a>
+          </div>
+          <div className="resume-frame">
+            <iframe src={cvPath} title="Patryk Lagoda CV" />
+          </div>
+        </section>
+
+        <a className="back-to-top" href="#top" aria-label="Back to top">
+          ↑
+        </a>
+      </main>
     </>
   );
 }
