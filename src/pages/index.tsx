@@ -1,11 +1,53 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import MetaHead from "@/components/MetaHead";
 import { businessWork, projects, services, skillGroups } from "@/data/portfolio";
 
 const cvPath = "/2425_CV_patryklagoda_1-1.pdf";
 
+const navItems = [
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Projects", href: "#work" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
+  { label: "CV", href: "/resume" },
+];
+
 export default function Home() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 88);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!isMenuOpen) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isMenuOpen]);
+
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
     <>
       <MetaHead
@@ -14,17 +56,40 @@ export default function Home() {
       />
 
       <main className="site-shell" id="top">
-        <nav className="topbar" aria-label="Main navigation">
+        <nav
+          className={`topbar ${isScrolled ? "is-scrolled" : ""} ${isMenuOpen ? "is-menu-open" : ""}`}
+          aria-label="Main navigation"
+        >
           <Link className="brand" href="/" aria-label="Patryk Lagoda home">
             <img src="/favicon.ico" alt="" width="28" height="28" />
           </Link>
-          <div className="nav-links">
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#work">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-            <Link href="/resume">CV</Link>
+          <button
+            className="menu-toggle"
+            type="button"
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="main-navigation-links"
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+          <div
+            className={`nav-links ${isMenuOpen ? "is-open" : ""}`}
+            id="main-navigation-links"
+          >
+            {navItems.map((item) =>
+              item.href.startsWith("/") ? (
+                <Link key={item.href} href={item.href} onClick={closeMenu}>
+                  {item.label}
+                </Link>
+              ) : (
+                <a key={item.href} href={item.href} onClick={closeMenu}>
+                  {item.label}
+                </a>
+              ),
+            )}
           </div>
         </nav>
 
@@ -243,7 +308,11 @@ export default function Home() {
           </div>
         </section>
 
-        <a className="back-to-top" href="#top" aria-label="Back to top">
+        <a
+          className={`back-to-top ${isScrolled ? "is-visible" : ""}`}
+          href="#top"
+          aria-label="Back to top"
+        >
           ↑
         </a>
       </main>

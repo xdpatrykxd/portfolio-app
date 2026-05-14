@@ -1,44 +1,93 @@
-# My Portfolio
+# Patryk Lagoda Portfolio
 
-Welcome to my personal portfolio website! This site showcases my work, skills, and projects as a web developer. It's built using **Next.js** and **TypeScript**, and hosted on my own **VPS**.
+Professional portfolio website for Patryk Lagoda, a programming student and web developer from Belgium. The site presents practical web development work, deployment experience, automation interests, and business-focused digital solutions.
 
----
+Live site: [lagodapat.com](https://lagodapat.com)
 
-## 🚀 Technologies Used
+## Purpose
 
-- **Next.js** - React framework for server-side rendering and static site generation
-- **TypeScript** - For type safety and improved developer experience
-- **CSS** - For styling (you can mention any libraries like Tailwind if used)
-- **VPS** - Hosted on my personal Virtual Private Server for full control and performance
+This portfolio is designed as a serious online presence for future clients, small businesses, entrepreneurs, recruiters, and collaborators. It highlights real deployed projects, technical problem-solving, and hands-on experience with modern web development and production setup.
 
----
+Core message:
 
-## 📦 Features
+> I build clean websites, web applications, automation tools, and practical digital solutions for real-world use.
 
-- **Responsive Design** - Optimized for both desktop and mobile devices
-- **Fast Performance** - Leveraging server-side rendering (SSR) and static site generation (SSG) for faster load times
-- **Interactive Projects Showcase** - Display of my web development projects with detailed descriptions
-- **Contact Form** - To get in touch with me directly from the website
+## Tech Stack
 
----
+- Next.js
+- React
+- TypeScript
+- CSS
+- VPS deployment
+- Domain and SSL setup
+- PM2 / production process management
 
-## 🌐 Live Demo
+Runtime dependencies are intentionally minimal: `next`, `react`, and `react-dom`.
 
-You can check out the live portfolio at:  
-[https://lagodapat.com](https://lagodapat.com)
+## Main Sections
 
----
+- Hero introduction
+- About
+- Services
+- Featured projects
+- Skills grouped by category
+- Business focus
+- Contact
+- CV / resume page with embedded PDF
 
-## 🛠️ Setup Instructions
+## Featured Work
 
-If you want to run the project locally, follow these steps:
+- `dpwedding.eu` - real wedding invitation website deployed online
+- `ClanHub` - full-stack Angular and Node.js platform concept
+- `lagodapat.com` - personal professional website and online identity
+- `Endless Descent Prototype` - Angular browser game prototype
+- `Automation Scripts` - JavaScript/Tampermonkey automation and webhook integrations
 
-1. Clone this repository:
-   ```bash
-   git clone git@github.com:xdpatrykxd/portfolio-app.git
+## Local Development
 
-2. cd ./portfolio-app
+Install dependencies:
 
-3. npm install
+```bash
+npm install
+```
 
-4. npm run dev# portfolio-app
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Open:
+
+```text
+http://localhost:3001
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Run the production server:
+
+```bash
+npm start
+```
+
+## Project Structure
+
+```text
+src/
+  components/      Shared metadata component
+  data/            Portfolio content and structured data
+  pages/           Next.js pages
+  styles/          Global styling
+public/            Static assets, favicon, project images, CV PDF
+```
+
+## Contact
+
+- Email: [lagoda.patryk@gmail.com](mailto:lagoda.patryk@gmail.com)
+- LinkedIn: [patryk-lagoda](https://www.linkedin.com/in/patryk-lagoda-505a54309/)
+- GitHub: [xdpatrykxd](https://github.com/xdpatrykxd)

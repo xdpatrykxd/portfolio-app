@@ -81,7 +81,14 @@ img {
   box-shadow: 0 14px 42px rgba(0, 0, 0, 0.24);
 }
 
-.brand {
+.topbar.is-scrolled {
+  width: max-content;
+  margin-right: auto;
+  padding: 8px;
+}
+
+.brand,
+.menu-toggle {
   display: inline-grid;
   width: 44px;
   height: 44px;
@@ -89,12 +96,53 @@ img {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel-strong);
+}
+
+.brand {
   font-weight: 850;
 }
 
 .brand img {
   width: 28px;
   height: 28px;
+}
+
+.menu-toggle {
+  display: none;
+  padding: 0;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  grid-area: 1 / 1;
+  width: 24px;
+  height: 4px;
+  border-radius: 999px;
+  background-image: url("/favicon.ico");
+  background-position: center;
+  background-size: 28px 28px;
+  box-shadow:
+    0 0 0 1px rgba(244, 239, 228, 0.34),
+    0 0 0 3px rgba(36, 33, 29, 0.74);
+  transition:
+    transform 160ms ease,
+    opacity 160ms ease;
+}
+
+.menu-toggle span:first-child {
+  background-position: center calc(50% - 8px);
+  transform: translateY(-8px);
+}
+
+.menu-toggle span:last-child {
+  background-position: center calc(50% + 8px);
+  transform: translateY(8px);
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+  background: rgba(244, 239, 228, 0.08);
 }
 
 .nav-links,
@@ -130,6 +178,70 @@ img {
 .nav-links a:focus-visible {
   background: rgba(244, 239, 228, 0.08);
   text-decoration: none;
+}
+
+.topbar.is-scrolled .brand {
+  display: none;
+}
+
+.topbar.is-scrolled .menu-toggle {
+  display: grid;
+}
+
+.topbar.is-scrolled.is-menu-open {
+  width: 100%;
+}
+
+.topbar.is-scrolled.is-menu-open .nav-links {
+  position: static;
+  width: auto;
+  display: flex;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.topbar.is-scrolled.is-menu-open .nav-links a {
+  justify-content: center;
+  width: auto;
+}
+
+.topbar.is-scrolled .nav-links {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: auto;
+  left: 0;
+  width: min(260px, calc(100vw - 32px));
+  display: none;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(17, 16, 14, 0.96);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.topbar.is-scrolled .nav-links.is-open {
+  display: grid;
+}
+
+.topbar.is-scrolled.is-menu-open .nav-links {
+  position: static;
+  width: auto;
+  display: flex;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.topbar.is-scrolled .nav-links a {
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0 12px;
 }
 
 .hero-card,
@@ -532,6 +644,18 @@ h3 {
   box-shadow: var(--shadow);
   font-size: 1.4rem;
   font-weight: 850;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .back-to-top:hover,
@@ -572,7 +696,6 @@ h3 {
     padding-top: 8px;
   }
 
-  .topbar,
   .resume-header {
     align-items: flex-start;
     flex-direction: column;
@@ -580,15 +703,78 @@ h3 {
 
   .topbar {
     top: 8px;
+    width: 100%;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .topbar.is-scrolled {
+    width: max-content;
+  }
+
+  .topbar.is-scrolled.is-menu-open {
+    width: max-content;
+  }
+
+  .menu-toggle {
+    display: grid;
   }
 
   .nav-links {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    left: 0;
     width: 100%;
+    display: none;
     gap: 4px;
+    padding: 8px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(17, 16, 14, 0.96);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(16px);
+  }
+
+  .nav-links.is-open {
+    display: grid;
   }
 
   .nav-links a {
-    padding: 0 8px;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0 12px;
+  }
+
+  .topbar.is-scrolled .nav-links {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: auto;
+    left: 0;
+    width: min(260px, calc(100vw - 24px));
+    display: none;
+    padding: 8px;
+    border: 1px solid var(--line);
+    background: rgba(17, 16, 14, 0.96);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(16px);
+  }
+
+  .topbar.is-scrolled.is-menu-open .nav-links {
+    position: absolute;
+    display: grid;
+    width: min(260px, calc(100vw - 24px));
+    padding: 8px;
+    border: 1px solid var(--line);
+    background: rgba(17, 16, 14, 0.96);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(16px);
+  }
+
+  .topbar.is-scrolled.is-menu-open .nav-links a {
+    justify-content: flex-start;
+    width: 100%;
   }
 
   .hero-actions,
